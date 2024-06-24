@@ -1,0 +1,302 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Cero Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href= "{% static "css/index.css" %}">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="Index.html">
+        <img
+          src="{% static "imagenes/logo.jpg" %}"
+          alt="Logo de Grupo Cero"
+          height="30"
+          class="d-inline-block align-top"
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="Index.html"
+              ><i class="fas fa-home"></i> Inicio</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="views/artistas.html"
+              ><i class="fas fa-users"></i> Artistas</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Sobrenosotros.html"
+              ><i class="fas fa-info-circle"></i> Sobre Nosotros</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contacto.html"
+              ><i class="fas fa-envelope"></i> Contacto</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="carrito.html"
+              ><i class="fas fa-shopping-cart"></i> Carrito</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">
+              <i class="fas fa-user" style="margin-right: 10px"></i> Iniciar
+              Sesión
+            </a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Buscar"
+            aria-label="Search"
+          />
+          <button
+            class="btn btn-outline-success.text-primary-emphasis"
+            type="submit"
+          >
+            Buscar
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+<div id="carouselExampleAutoplaying" class="carousel slide py-4" data-bs-ride="carousel" data-bs-interval="5000" style="max-width: 1000px; margin: auto;">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <a href="views/detalle1.html">
+        <img src="{% static "imagenes/banner1.png" %}" class="d-block w-100" alt="...">
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="views/detalle2.html">
+        <img src="{% static "imagenes/banner2.png" %}"class="d-block w-100" alt="...">
+      </a>
+    </div>
+    <div class="carousel-item">
+      <a href="views/detalle3.html">
+        <img src="{% static "imagenes/banner3.png" %}" class="d-block w-100" alt="...">
+      </a>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    <div class="container py-5">
+      <h1 class="rich-text__heading ff-heading fs-heading-2-base fs-heading-1-base-ns" style="--text-max-width: 47rem;
+					  font-size: 30px;
+                      font-family: Futura, sans-serif!important;"> Artistas Exclusivos 
+
+      </h1>
+      <h2 class="rich-text__heading ff-heading fs-heading-2-base fs-heading-1-base-ns" style="--text-max-width: 47rem;
+					  font-size: 21px; 
+                      font-family: Futura, sans-serif!important;">
+              El sábado 20 y domingo 21 de abril se realizará “POP UP DE ARTE”, una venta de arte especial con más de 500 obras en catálogo y un taller de tetrapack a cargo de las artistas&nbsp;Teresa Ortúzar&nbsp;y&nbsp;Pilar Rodríguez
+            </h2>
+
+    </div>
+  </div>
+  <div class="container py-5">
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card">
+                <a href="views/detalle1.html">
+                    <img src="{% static "imagenes/img1.jpg" %}" class="card-img-top" alt="Producto 1">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Producto 1</h5>
+                    <p class="card-text">$300.000</p>
+                    <a href="#" class="btn" data-bs-toggle="collapse" data-bs-target="#collapseProducto1">Detalles</a>
+                    <div class="collapse" id="collapseProducto1">
+                      <p><strong>Artista:</strong> Nombre del Artista</p>
+                      <p><strong>Técnica:</strong> Técnica Utilizada</p>
+                      <p><strong>Historia:</strong> Breve descripción histórica de la pintura...</p>
+                        <a href="views/detalle1.html" class="btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card">
+                <a href="views/detalle2.html">
+                    <img src="{% static "imagenes/img2.jpg" %}"class="card-img-top" alt="Producto 2">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Producto 2</h5>
+                    <p class="card-text">$300.000</p>
+                    <a href="#" class="btn" data-bs-toggle="collapse" data-bs-target="#collapseProducto2">Detalles</a>
+                    <div class="collapse" id="collapseProducto2">
+                      <p><strong>Artista:</strong> Nombre del Artista</p>
+                      <p><strong>Técnica:</strong> Técnica Utilizada</p>
+                      <p><strong>Historia:</strong> Breve descripción histórica de la pintura...</p>
+                        <a href="views/detalle2.html" class="btn">Comprar</a> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card">
+                <a href="views/detalle3.html">
+                    <img src="{% static "imagenes/img3.jpg" %}" class="card-img-top" alt="Producto 3">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Producto 3</h5>
+                    <p class="card-text">$300.000</p>
+                    <a href="#" class="btn" data-bs-toggle="collapse" data-bs-target="#collapseProducto3">Detalles</a>
+                    <div class="collapse" id="collapseProducto3">
+                      <p><strong>Artista:</strong> Nombre del Artista</p>
+                      <p><strong>Técnica:</strong> Técnica Utilizada</p>
+                      <p><strong>Historia:</strong> Breve descripción histórica de la pintura...</p>
+                        <a href="views/detalle3.html" class="btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+  <div class="container py-5">
+    <h1 class="rich-text__heading ff-heading fs-heading-2-base fs-heading-1-base-ns" style="--text-max-width: 47rem;
+          font-size: 30px;
+                    font-family: Futura, sans-serif!important;"> Artistas Exclusivos 
+
+    </h1>
+    <h2 class="rich-text__heading ff-heading fs-heading-2-base fs-heading-1-base-ns" style="--text-max-width: 47rem;
+          font-size: 21px; 
+                    font-family: Futura, sans-serif!important;">
+            El sábado 20 y domingo 21 de abril se realizará “POP UP DE ARTE”, una venta de arte especial con más de 500 obras en catálogo y un taller de tetrapack a cargo de las artistas&nbsp;Teresa Ortúzar&nbsp;y&nbsp;Pilar Rodríguez
+          </h2>
+
+  </div>
+
+</div>
+
+<div class="container py-5">
+  <div class="row">
+      <div class="col-lg-4 mb-4">
+          <div class="card">
+              <a href="views/detalle1.html">
+                  <img src="{% static "imagenes/img4.jpg" %}" class="card-img-top" alt="Producto 1">
+              </a>
+              <div class="card-body">
+                  <h5 class="card-title">Producto 1</h5>
+                  <p class="card-text">$300.000</p>
+                  <a href="#" class="btn" data-bs-toggle="collapse" data-bs-target="#collapseProducto4">Detalles</a>
+                  <div class="collapse" id="collapseProducto4">
+                    <p><strong>Artista:</strong> Nombre del Artista</p>
+                    <p><strong>Técnica:</strong> Técnica Utilizada</p>
+                    <p><strong>Historia:</strong> Breve descripción histórica de la pintura...</p>
+                      <a href="views/detalle1.html" class="btn">Comprar</a> 
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+          <div class="card">
+              <a href="views/detalle2.html">
+                  <img src="{% static "imagenes/img5.jpg" %}" class="card-img-top" alt="Producto 2">
+              </a>
+              <div class="card-body">
+                  <h5 class="card-title">Producto 2</h5>
+                  <p class="card-text">$300.000</p>
+                  <a href="#" class="btn" data-bs-toggle="collapse" data-bs-target="#collapseProducto5">Detalles</a>
+                  <div class="collapse" id="collapseProducto5">
+                    <p><strong>Artista:</strong> Nombre del Artista</p>
+                    <p><strong>Técnica:</strong> Técnica Utilizada</p>
+                    <p><strong>Historia:</strong> Breve descripción histórica de la pintura...</p>
+                      <a href="views/detalle2.html" class="btn">Comprar</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+          <div class="card">
+              <a href="views/detalle3.html">
+                  <img src="{% static "imagenes/img6.jpg" %}" class="card-img-top" alt="Producto 3">
+              </a>
+              <div class="card-body">
+                  <h5 class="card-title">Producto 3</h5>
+                  <p class="card-text">$300.000</p>
+                  <a href="#" class="btn" data-bs-toggle="collapse" data-bs-target="#collapseProducto6">Detalles</a>
+                  <div class="collapse" id="collapseProducto6">
+                    <p><strong>Artista:</strong> Nombre del Artista</p>
+                    <p><strong>Técnica:</strong> Técnica Utilizada</p>
+                    <p><strong>Historia:</strong> Breve descripción histórica de la pintura...</p>
+                      <a href="views/detalle3.html" class="btn">Comprar</a> 
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="d-flex justify-content-center"> 
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/iszldsN137M?si=1QUl2r0BdeM8ED0A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<h1 class="text-center">Visitanos !</h1>
+
+<div class="container py-5">
+  <div class="d-flex justify-content-center"> 
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3327.049828297408!2d-70.61886772527828!3d-33.500080700053836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d00be4a5fa81%3A0xcd8eaf5b1d547f64!2sDuoc%20UC%3A%20Sede%20San%20Joaqu%C3%ADn!5e0!3m2!1ses!2scl!4v1716834255836!5m2!1ses!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</div>
+
+
+<footer class="footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-4 footer-left">
+              <p><i class="fas fa-envelope"></i> Contactanos: contacto@grupocero.com</p>
+          </div>
+          <div class="col-md-4 footer-center">
+              <p><i class="fas fa-map-marker-alt"></i> Dirección: Calle Principal #123, Ciudad, País</p>
+          </div>
+          <div class="col-md-4 footer-right">
+              <p> Redes Sociales: 
+                  <a href="#"><i class="fab fa-facebook"></i></a> | 
+                  <a href="#"><i class="fab fa-twitter"></i></a> | 
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+              </p>
+          </div>
+      </div>
+  </div>
+</footer>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

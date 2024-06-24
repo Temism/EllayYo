@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grupo Cero Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/Index.css" />
+  </head>
+  <body>
+   
+    <header>
+      <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../Index.html">
+            <img
+              src="../imagenes/logo.jpg"
+              alt="Logo de Grupo Cero"
+              height="30"
+              class="d-inline-block align-top"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../Index.html"
+                  ><i class="fas fa-home"></i> Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="artistas.html"
+                  ><i class="fas fa-users"></i> Artistas</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../Sobrenosotros.html"
+                  ><i class="fas fa-info-circle"></i> Sobre Nosotros</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../contacto.html"
+                  ><i class="fas fa-envelope"></i> Contacto</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../carrito.html"
+                  ><i class="fas fa-shopping-cart"></i> Carrito</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../login.html">
+                  <i class="fas fa-user" style="margin-right: 10px"></i> Iniciar
+                  Sesión
+                </a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Buscar"
+                aria-label="Search"
+              />
+              <button
+                class="btn btn-outline-success.text-primary-emphasis"
+                type="submit"
+              >
+                Buscar
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="artist-info">
+            <div class="row">
+              
+              <div class="col-md-4">
+                <img
+                  src="../imagenes/img3.jpg"
+                  class="img-fluid"
+                  alt="Foto del Artista"
+                />
+              </div>
+            
+              <div class="col-md-8">
+                <h2>Vincent van Gogh</h2>
+                <p>
+                  (1853 - 1890) fue un pintor holandés considerado uno de los
+                  más importantes postimpresionistas. Según la Enciclopedia
+                  Britannica, el artista se caracterizó por obras de color
+                  llamativo, pincelada enfática y formas contorneadas. Dos años
+                  antes de su muerte, Van Gogh cortó su oreja
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    
+      <h3 class="artwork-title">Obras del Artista</h3>
+      <div class="row artwork-container">
+       
+        <div class="col-md-4">
+          <div class="artwork-img">
+            <img src="../imagenes/img3.jpg" class="img-fluid" alt="Primera Obra" />
+          </div>
+          <h4>Nombre de la Obra</h4>
+          <p>Precio: $XXX</p>
+          <button class="btn">Comprar</button>
+        </div>
+       
+        <div class="col-md-4">
+          <div class="artwork-img">
+            <img src="../imagenes/img3.jpg" class="img-fluid" alt="Segunda Obra" />
+          </div>
+          <h4>Nombre de la Obra</h4>
+          <p>Precio: $XXX</p>
+          <button class="btn">Comprar</button>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="artwork-img">
+            <img src="../imagenes/img3.jpg" class="img-fluid" alt="Tercera Obra" />
+          </div>
+          <h4>Nombre de la Obra</h4>
+          <p>Precio: $XXX</p>
+          <button class="btn">Comprar</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 footer-left">
+            <p>
+              <i class="fas fa-envelope"></i> Contactanos:
+              contacto@grupocero.com
+            </p>
+          </div>
+          <div class="col-md-4 footer-center">
+            <p>
+              <i class="fas fa-map-marker-alt"></i> Dirección: Calle Principal
+              #123, Ciudad, País
+            </p>
+          </div>
+          <div class="col-md-4 footer-right">
+            <p>
+              Redes Sociales: <a href="#"><i class="fab fa-facebook"></i></a> |
+              <a href="#"><i class="fab fa-twitter"></i></a> |
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
