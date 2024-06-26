@@ -27,6 +27,16 @@ def artistas(request):
 def artista1(request):
     return render(request,'vistas/views/artista1.html')
 
+def artista2(request):
+    return render(request,'vistas/views/artista2.html')
+
+def artista3(request):
+    return render(request,'vistas/views/artista3.html')
+
+def artista4(request):
+    return render(request,'vistas/views/artista4.html')
+
+
 
 
 # Create your views here.

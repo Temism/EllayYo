@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -12,19 +13,15 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/Index.css" />
+    <link rel="stylesheet" href="{% static "css/index.css" %}" />
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="../Index.html">
-            <img
-              src="../imagenes/logo.jpg"
-              alt="Logo de Grupo Cero"
-              height="30"
-              class="d-inline-block align-top"
-            />
+            <img src="{% static "imagenes/logo.jpg" %}" alt="Logo de Grupo Cero"
+            height="30" class="d-inline-block align-top" />
           </a>
           <button
             class="navbar-toggler"
@@ -40,7 +37,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../Index.html"
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="../Index.html"
                   ><i class="fas fa-home"></i> Inicio</a
                 >
               </li>
@@ -96,11 +96,8 @@
           <div class="artist-info">
             <div class="row">
               <div class="col-md-4">
-                <img
-                  src="../imagenes/artista.jpeg"
-                  class="img-fluid"
-                  alt="Foto del Artista"
-                />
+                <img src="{% static "imagenes/artista.jpeg" %}"
+                class="img-fluid" alt="Foto del Artista" />
               </div>
 
               <div class="col-md-8">
@@ -122,7 +119,8 @@
       <div class="row artwork-container">
         <div class="col-md-4">
           <div class="artwork-img">
-            <img src="../imagenes/img1.jpg" class="img-fluid" alt="Primera Obra" />
+            <img src="{% static "imagenes/img1.jpg" %}" class="img-fluid"
+            alt="Primera Obra" />
           </div>
           <h4>Nombre de la Obra</h4>
           <p>Precio: $XXX</p>
@@ -131,7 +129,8 @@
 
         <div class="col-md-4">
           <div class="artwork-img">
-            <img src="../imagenes/img1.jpg" class="img-fluid" alt="Segunda Obra" />
+            <img src="{% static "imagenes/img1.jpg" %}" class="img-fluid"
+            alt="Segunda Obra" />
           </div>
           <h4>Nombre de la Obra</h4>
           <p>Precio: $XXX</p>
@@ -140,7 +139,8 @@
 
         <div class="col-md-4">
           <div class="artwork-img">
-            <img src="../imagenes/img1.jpg" class="img-fluid" alt="Tercera Obra" />
+            <img src="{% static "imagenes/img1.jpg" %}" class="img-fluid"
+            alt="Tercera Obra" />
           </div>
           <h4>Nombre de la Obra</h4>
           <p>Precio: $XXX</p>
