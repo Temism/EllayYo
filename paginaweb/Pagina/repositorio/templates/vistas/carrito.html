@@ -20,12 +20,8 @@
       <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="Index.html">
-            <img
-              src="imagenes/logo.jpg"
-              alt="Logo de Grupo Cero"
-              height="30"
-              class="d-inline-block align-top"
-            />
+            <img src="{% static "imagenes/logo.jpg" %}" alt="Logo de Grupo Cero"
+            height="30" class="d-inline-block align-top" />
           </a>
           <button
             class="navbar-toggler"
@@ -95,7 +91,7 @@
       <h1>Carrito de Compras</h1>
       <p id="carrito-vacio" class="alert alert-info" role="alert">
         Ups! El carrito está vacío,
-        <a href="./index.html">elige algunos productos</a>
+        <a href="../Index.html">elige algunos productos</a>
       </p>
       <section
         id="cart-container"
@@ -148,6 +144,6 @@
       </div>
     </footer>
 
-    <script src="js/carrito.js"></script>
+    <script src="{% static "js/carrito.js" %}"></script>
   </body>
 </html>

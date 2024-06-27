@@ -187,7 +187,48 @@
         </div>
       </div>
     </footer>
-    <script src="js/valid_contacto.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#contactForm").submit(function (event) {
+          event.preventDefault();
+
+          var nombre = $("#nombre").val();
+          var telefono = $("#telefono").val();
+          var correo = $("#correo").val();
+          var descripcion = $("#descripcion").val();
+          var mensajeError = $("#mensajeError");
+
+          mensajeError.html("");
+
+          if (!/^[a-zA-Z\s]+$/.test(nombre)) {
+            mensajeError.append(
+              "Por favor, ingrese un nombre válido (solo letras).<br>"
+            );
+          }
+
+          if (!/^\+?[0-9]{6,15}$/.test(telefono)) {
+            mensajeError.append(
+              "Por favor, ingrese un número de teléfono válido (solo números).<br>"
+            );
+          }
+
+          if (!/\S+@\S+\.\S+/.test(correo)) {
+            mensajeError.append(
+              "Por favor, ingrese un correo electrónico válido.<br>"
+            );
+          }
+
+          if (descripcion.trim() === "") {
+            mensajeError.append("Por favor, ingrese una descripción.<br>");
+          }
+
+          if (mensajeError.html() === "") {
+            this.submit();
+          }
+        });
+      });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

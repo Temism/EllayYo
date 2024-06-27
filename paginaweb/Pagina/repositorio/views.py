@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import usuarios
 
 
 def index(request):
@@ -36,7 +37,25 @@ def artista3(request):
 def artista4(request):
     return render(request,'vistas/views/artista4.html')
 
+def detalle1(request):
+    return render(request,'vistas/views/detalle1.html')
+
+def detalle2(request):
+    return render(request,'vistas/views/detalle2.html')
+
+def detalle3(request):
+    return render(request,'vistas/views/detalle3.html')
+
+def detalle4(request):
+    return render(request,'vistas/views/detalle4.html')
 
 
+
+
+
+def usuarios(request):
+    users= usuarios.objects.all()
+    datos = {'usuarios' : users}
+    return render(request, 'vistas/usuariocrear.html', datos)
 
 # Create your views here.

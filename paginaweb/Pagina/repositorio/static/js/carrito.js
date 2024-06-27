@@ -23,26 +23,29 @@ function mostrarCarrito() {
 }
 
 function actualizarTablaCarrito() {
-  cartContainer.innerHTML = "";
+  var listaOrdenada = document.createElement("ol");
 
   carrito.forEach(function (producto) {
-    var fila = document.createElement("div");
+    var fila = document.createElement("li");
+
     fila.innerHTML =
+      `<img src="${producto.imagen}" alt="${producto.nombre}" style="max-width: 50px;">` +
       producto.nombre +
       " - Precio: $" +
       producto.precio +
       '<button class="btnEliminarDelCarrito" style="margin-left: 10px;"> Eliminar </button>';
-    cartContainer.appendChild(fila);
-  });
 
-  var btnsEliminarDelCarrito = cartContainer.querySelectorAll(
-    ".btnEliminarDelCarrito"
-  );
-  btnsEliminarDelCarrito.forEach(function (btn, index) {
-    btn.addEventListener("click", function () {
+    listaOrdenada.appendChild(fila);
+
+    var btnEliminar = fila.querySelector(".btnEliminarDelCarrito");
+    btnEliminar.addEventListener("click", function () {
+      var index = Array.from(listaOrdenada.children).indexOf(fila);
       eliminarProductoDelCarrito(index);
     });
   });
+
+  cartContainer.innerHTML = "";
+  cartContainer.appendChild(listaOrdenada);
 }
 
 function eliminarProductoDelCarrito(index) {
