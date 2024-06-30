@@ -97,12 +97,18 @@
           <div class="card bg-light">
             <div class="card-header text-center">Registro de Nuevo Usuario</div>
             <div class="card-body">
-              <form id="registrationForm">
+              <form
+                id="registrationForm"
+                action="{% url 'crear_u' %}"
+                method="POST"
+              >
+                {% csrf_token %}
                 <div class="form-group mb-3">
                   <label for="nombre">Nombre:</label>
                   <input
                     type="text"
                     class="form-control"
+                    name="nombre"
                     id="nombre"
                     placeholder="Ingrese su nombre"
                   />
@@ -112,6 +118,7 @@
                   <input
                     type="email"
                     class="form-control"
+                    name="email"
                     id="email"
                     placeholder="Ingrese su email"
                   />
@@ -121,6 +128,7 @@
                   <input
                     type="password"
                     class="form-control"
+                    name="password"
                     id="password"
                     placeholder="Ingrese su contraseña"
                   />
@@ -206,8 +214,12 @@
           console.log("Nombre:", nombre);
           console.log("Email:", email);
           console.log("Contraseña:", password);
-
-          window.location.href = "index.html";
+          const methodType = registrationForm.method.toUpperCase();
+          console.log("Tipo de método:", methodType);
+          const formData = new FormData(registrationForm);
+          for (const pair of formData.entries()) {
+            console.log(pair[0] + ": " + pair[1]);
+          }
         });
       });
     </script>

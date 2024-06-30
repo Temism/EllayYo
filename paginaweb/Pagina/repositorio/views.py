@@ -1,13 +1,13 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from .models import usuarios
+from django.shortcuts import render, redirect,get_object_or_404
+from django.http import JsonResponse
+from .models import usuario
 
 
 def index(request):
     return render(request,'vistas/index.html') 
 
 def nueva_cuenta(request):
-    return render(request,'vistas/nueva_cuenta.html')
+    return render(request, 'vistas/nueva_cuenta.html')
 
 def carrito(request):
     return render(request,'vistas/carrito.html')
@@ -49,13 +49,71 @@ def detalle3(request):
 def detalle4(request):
     return render(request,'vistas/views/detalle4.html')
 
+def lista_usuario(request):
+    print("estamos en listar")
+    usuarios = usuario.objects.all()
+    return render(request,'vistas/crud/lista_usuario.html',{"usuarios": usuarios})
+
+def crear_usuario(request):
+    print("estamos en crear")
+    return render(request,'vistas/crud/crear_usuario.html')
+
+def editar_usuario(request):
+    print("estamos en editar")
+    return render(request,'vistas/crud/editar_usuario.html')
+
+def crear_u(request):
+    if request.method == "POST":
+        nombre = request.POST.get("nombre")
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+        if not nombre or not email or not password:
+            usuarios = usuario.objects.all()
+            return render(request, 'vistas/crud/crear_usuario.html', {"usuarios": usuarios})
+        
+        nuevo_usuario = usuario.objects.create(nombre=nombre, email=email, password=password)
+        nuevo_usuario.save()
+
+        
+        return redirect('lista_usuario')
+    
+    usuarios = usuario.objects.all()
+    users = {"usuarios": usuarios}
+    return render(request, 'vistas/crud/crear_usuario.html', users)
 
 
 
+def borrar_u(request,pk):
+    try:
+        usuarios = usuario.objects.get(primary=pk)
+        usuarios.delete()
+        usuarios = usuario.objects.all()
+        return redirect('lista_usuario')
+    except:
+        usuarios = usuario.objects.all()
+        return render(request,'vistas/crud/lista_usuario.html',{"usuarios": usuarios})
 
-def usuarios(request):
-    users= usuarios.objects.all()
-    datos = {'usuarios' : users}
-    return render(request, 'vistas/usuariocrear.html', datos)
+def editar_u(request, pk):
+    user = get_object_or_404(usuario, pk=pk)
+
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre')
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        user.nombre = nombre
+        user.email = email
+        user.password = password
+        user.save()  
+
+        return redirect('lista_usuario')  
+    else:
+        context = {
+            'usuario': user,  
+        }
+        return render(request, 'vistas/crud/editar_usuario.html', context)
+    
+    
+    
 
 # Create your views here.

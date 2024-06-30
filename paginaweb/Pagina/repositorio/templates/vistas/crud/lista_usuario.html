@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crud</title>
+  </head>
+  <body>
+    <h1>Editar Datos Usuarios</h1>
+    <br />
+
+    <a href="../crud/crear_usuario.html">Agregar</a>
+
+    <div id="idmensaje">{% if mensaje%} {{mensaje}} {%endif%}</div>
+
+    <table>
+      <th>Nombre</th>
+      <th>Email</th>
+      {% for c in usuarios%}
+      <tr>
+        <td>{{c.nombre}}</td>
+        <td>{{c.email}}</td>
+        <td><a href="{% url 'borrar_u'  pk=c.primary%}">Eliminar </a></td>
+        <td><a href="{% url 'editar_u'  pk=c.primary%}">Editar </a></td>
+      </tr>
+      {%endfor%}
+    </table>
+  </body>
+</html>

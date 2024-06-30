@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Usuario</title>
+  </head>
+  <body>
+    <div style="text-align: center">
+      <h2>Formulario Edición Usuarios</h2>
+      <br />
+      <form action="{% url 'editar_u' pk=usuario.pk %}" method="POST">
+        {% csrf_token %}
+        <pre>Nombre: <input type="text" name="nombre" value="{{ usuario.nombre }}"></pre>
+        <pre>Email: <input type="text" name="email" value="{{ usuario.email }}"></pre>
+        <pre>Password: <input type="text" name="password" value="{{ usuario.password }}"></pre>
+
+        <button type="submit">Guardar Cambios</button>
+      </form>
+      <br /><br />
+      <a href="../crud/lista_usuario.html">Volver</a>
+    </div>
+  </body>
+</html>

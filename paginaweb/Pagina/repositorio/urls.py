@@ -18,5 +18,12 @@ urlpatterns = [
     path('views/detalle2.html',views.detalle2, name='detalle2'),
     path('views/detalle3.html',views.detalle3, name='detalle3'),
     path('views/detalle4.html',views.detalle4, name='detalle4'),
-    path('usuariocrear.html',views.usuarios,name='usuarioscrear'),
+    path('crud/lista_usuario.html',views.lista_usuario, name='lista_usuario'),
+    path('crud/crear_usuario.html',views.crear_usuario, name='crear_usuario'),
+    path('crud/editar_usuario.html',views.editar_usuario, name='editar_usuario'),
+    path('crear_u',views.crear_u, name='crear_u'),
+    path('borrar_u/<str:pk>',views.borrar_u, name='borrar_u'),  
+    path('editar_u/<str:pk>',views.editar_u, name='editar_u'),
+
+
 ]

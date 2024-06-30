@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crud</title>
+  </head>
+  <body>
+    <div style ="text-aling: center;"
+      <h2> Formulario Creacion Usuarios </h2> <br>
+      <form action="{% url 'crear_u' %}" method = "POST">
+        {% csrf_token %}
+        <pre> Nombre:  <input type="text" name="nombre"> </input> </pre>
+        <pre> Email:  <input type="text" name="email"> </input> </pre>
+        <pre> Password:  <input type="text" name="password"> </input> </pre>
+        
+
+
+        <button type="submit"> Agregar </button>
+      </form>
+      
+      <br><br>
+      <a href='../crud/lista_usuario.html'> Volver</a>
+    ></div>
+  </body>
+</html>
