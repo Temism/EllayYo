@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect,get_object_or_404
-from django.http import JsonResponse
+from django.contrib import messages
+from django.contrib.auth import authenticate
 from .models import usuario
 
 
@@ -62,24 +63,34 @@ def editar_usuario(request):
     print("estamos en editar")
     return render(request,'vistas/crud/editar_usuario.html')
 
+from django.shortcuts import render, redirect
+from .models import usuario
+
 def crear_u(request):
     if request.method == "POST":
         nombre = request.POST.get("nombre")
         email = request.POST.get("email")
         password = request.POST.get("password")
+        
         if not nombre or not email or not password:
             usuarios = usuario.objects.all()
+            return render(request, 'vistas/crud/crear_usuario.html', {"usuarios": usuarios})
+        
+        if usuario.objects.filter(email=email).exists():
+
+            usuarios = usuario.objects.all()
+            messages.error(request, "Ya existe un usuario con este email.")
             return render(request, 'vistas/crud/crear_usuario.html', {"usuarios": usuarios})
         
         nuevo_usuario = usuario.objects.create(nombre=nombre, email=email, password=password)
         nuevo_usuario.save()
 
-        
         return redirect('lista_usuario')
     
     usuarios = usuario.objects.all()
     users = {"usuarios": usuarios}
     return render(request, 'vistas/crud/crear_usuario.html', users)
+
 
 
 
@@ -113,7 +124,6 @@ def editar_u(request, pk):
         }
         return render(request, 'vistas/crud/editar_usuario.html', context)
     
-    
-    
+
 
 # Create your views here.
